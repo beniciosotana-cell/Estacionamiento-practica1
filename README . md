@@ -1,0 +1,16 @@
+# Práctica No. 1: Cálculo de Cobro en un Estacionamiento
+
+## Descripción del Sistema
+Este es un programa de consola desarrollado en C# utilizando Visual Studio. Su objetivo es calcular de forma automatizada el monto que debe abonar un vehículo en base a sus horas de entrada y salida, cumpliendo con los requerimientos de la materia.
+
+## Reglas del Negocio Aplicadas
+* *Menos de 1 hora:* Se cobra como 1 hora completa ($30).
+* *Primera hora:* Tiene un costo base de $30.
+* *Horas adicionales:* Cada hora extra tiene un costo de $20.
+* *Más de 8 horas:* Se aplica una tarifa plana/fija de $180 por todo el día.
+
+## Lógica del Programa
+1. *Captura:* Solicita al usuario ingresar la hora de entrada y salida (formato entero de 0 a 23).
+2. *Validación:* Verifica mediante una estructura condicional (if) que la salida sea mayor que la entrada para evitar errores.
+3. *Cálculo:* Resta las horas para obtener el tiempo total de estancia y evalúa las condicionales según las tarifas vigentes.
+4. *Salida:* Muestra el desglose final y el total a pagar en la consola.
