@@ -1,7 +1,7 @@
 # Práctica No. 1: Cálculo de Cobro en un Estacionamiento
 
 ## Descripción del Sistema
-Este es un programa de consola desarrollado en C# utilizando Visual Studio. Su objetivo es calcular de forma automatizada el monto que debe abonar un vehículo en base a sus horas de entrada y salida, cumpliendo con los requerimientos de la materia.
+Este es un programa de consola desarrollado en C# utilizando Visual Studio. Su objetivo es calcular de forma automatizada el monto que debe abonar un cliente por el uso del estacionamiento basándose en las horas de entrada y salida introducidas.
 
 ## Reglas del Negocio Aplicadas
 * *Menos de 1 hora:* Se cobra como 1 hora completa ($30).
@@ -10,7 +10,8 @@ Este es un programa de consola desarrollado en C# utilizando Visual Studio. Su o
 * *Más de 8 horas:* Se aplica una tarifa plana/fija de $180 por todo el día.
 
 ## Lógica del Programa
-1. *Captura:* Solicita al usuario ingresar la hora de entrada y salida (formato entero de 0 a 23).
-2. *Validación:* Verifica mediante una estructura condicional (if) que la salida sea mayor que la entrada para evitar errores.
-3. *Cálculo:* Resta las horas para obtener el tiempo total de estancia y evalúa las condicionales según las tarifas vigentes.
-4. *Salida:* Muestra el desglose final y el total a pagar en la consola.
+1. *Captura:* Solicita al usuario ingresar la hora de entrada y la hora de salida en formato entero (de 0 a 23).
+2. *Validación y Ajuste de Horario:* Verifica si la hora de salida es menor que la de entrada. De ser así, el sistema interpreta que la estancia cruzó la medianoche (salió al día siguiente) y calcula las horas sumando las 24 horas correspondientes para evitar valores negativos o incongruencias.
+3. *Control de Errores:* Valida que el tiempo total de estancia no sea igual o menor a 0 horas antes de proceder al cobro.
+4. *Cálculo de Tarifa:* Evalúa el tiempo mediante estructuras condicionales (if, else if, else) para asignar el total exacto a pagar según los rangos establecidos (1 hora, de 2 a 8 horas, o más de 8 horas).
+5. *Salida:* Muestra el desglose final con el tiempo total transcurrido y el monto neto a pagar en la consola.
